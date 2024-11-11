@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo Regresivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="countdown">60</h1>
+
+    <script>
+        let countdown = 60;
+        const countdownElement = document.getElementById("countdown");
+
+        function updateCountdown() {
+            if (countdown > 0) {
+                countdown--;
+                countdownElement.textContent = countdown;
+            } else {
+                countdownElement.textContent = "¡Tiempo terminado!";
+                clearInterval(interval);
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
